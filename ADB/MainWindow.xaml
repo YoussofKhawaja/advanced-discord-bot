@@ -1,0 +1,410 @@
+﻿<Window
+    x:Class="ADB.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Advanced Discord Bot"
+    Width="600"
+    Height="300"
+    MinWidth="600"
+    MinHeight="300"
+    Background="#FF36363C"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Window.Resources>
+        <Style x:Key="Label" TargetType="Label">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <Thickness x:Key="stackSpacing">0,10,0,0</Thickness>
+        <CornerRadius x:Key="btnCornerRadius">5</CornerRadius>
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="#262223" />
+            <Setter Property="Foreground" Value="#F25922" />
+            <Setter Property="BorderBrush" Value="#262223" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="0"
+            Background="#F25922"
+            MouseMove="Window_MouseMove">
+            <!--  Window Title  -->
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="18"
+                    Foreground="#262223"
+                    Text="Advanced Discord Bot" />
+            </StackPanel>
+            <!--  OS System Window Buttons  -->
+            <DockPanel HorizontalAlignment="Right">
+                <!--  Minimize  -->
+                <Button
+                    VerticalAlignment="Center"
+                    Background="{x:Null}"
+                    BorderBrush="{x:Null}"
+                    Click="Button_Click_3">
+                    <materialDesign:PackIcon Kind="WindowMinimize" />
+                </Button>
+                <!--  Exit  -->
+                <Button
+                    VerticalAlignment="Center"
+                    Background="{x:Null}"
+                    BorderBrush="{x:Null}"
+                    Click="Button_Click_2">
+                    <materialDesign:PackIcon Kind="Close" />
+                </Button>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <!--  Tabs  -->
+            <dragablz:TabablzControl
+                AllowDrop="False"
+                FixedHeaderCount="4"
+                TabStripPlacement="Top">
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController />
+                </dragablz:TabablzControl.InterTabController>
+                <TabItem Header="Home">
+                    <Grid Background="#262223">
+                        <Grid Grid.Row="0">
+                            <!--  Home  -->
+                            <Grid>
+                                <Grid Margin="60,0">
+                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <!--  Info  -->
+                                        <Grid
+                                            Grid.Column="0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                                                <Label
+                                                    HorizontalContentAlignment="Center"
+                                                    Content="Servers"
+                                                    FontSize="30"
+                                                    Foreground="White" />
+                                                <Label
+                                                    HorizontalContentAlignment="Center"
+                                                    d:Content="0"
+                                                    Content="{Binding Servers}"
+                                                    FontSize="40"
+                                                    Foreground="#F25922" />
+                                            </StackPanel>
+                                            <StackPanel
+                                                Grid.Column="1"
+                                                Margin="60,0,0,0"
+                                                HorizontalAlignment="Center">
+                                                <Label
+                                                    HorizontalContentAlignment="Center"
+                                                    Content="State"
+                                                    FontSize="30"
+                                                    Foreground="White" />
+                                                <Label
+                                                    HorizontalContentAlignment="Center"
+                                                    d:Content="Offline"
+                                                    Content="{Binding State}"
+                                                    FontSize="40"
+                                                    Foreground="#F25922" />
+                                            </StackPanel>
+                                        </Grid>
+                                        <!--  Control Buttons  -->
+                                        <StackPanel
+                                            Grid.Column="1"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Center">
+                                            <Label
+                                                HorizontalContentAlignment="Center"
+                                                Content="Start Bot"
+                                                FontSize="30"
+                                                Foreground="White" />
+                                            <Button
+                                                x:Name="StartBtn"
+                                                Grid.Row="1"
+                                                Margin="0,20,0,0"
+                                                Background="#F25922"
+                                                BorderThickness="0"
+                                                Click="Button_Click"
+                                                Foreground="White">
+                                                <Button.Resources>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="CornerRadius" Value="{StaticResource btnCornerRadius}" />
+                                                    </Style>
+                                                </Button.Resources>
+                                                <materialDesign:PackIcon
+                                                    x:Name="PlayIcon"
+                                                    Width="25"
+                                                    Height="25"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"
+                                                    Kind="Play" />
+                                            </Button>
+                                            <Button
+                                                x:Name="RestartBtn"
+                                                Grid.Row="2"
+                                                Margin="0,20,0,0"
+                                                Background="#F25922"
+                                                BorderThickness="0"
+                                                Click="Button_Click_1"
+                                                Foreground="White">
+                                                <Button.Resources>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="CornerRadius" Value="{StaticResource btnCornerRadius}" />
+                                                    </Style>
+                                                </Button.Resources>
+                                                <materialDesign:PackIcon
+                                                    Width="25"
+                                                    Height="25"
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Center"
+                                                    Kind="Restart" />
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Config">
+                    <Grid Background="#262223">
+                        <ScrollViewer>
+                            <Grid
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Background="#262223">
+                                <!--  Configuration  -->
+                                <StackPanel>
+                                    <Grid Margin="0,20">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <StackPanel
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Margin="10">
+                                            <!--  Token  -->
+                                            <DockPanel Margin="0,5">
+                                                <Label
+                                                    Margin="0,0,10,0"
+                                                    VerticalAlignment="Center"
+                                                    Content="Token*"
+                                                    FontSize="15"
+                                                    Foreground="White" />
+                                                <Border
+                                                    Height="25"
+                                                    MinWidth="400"
+                                                    Background="Black"
+                                                    BorderBrush="White"
+                                                    BorderThickness="1"
+                                                    CornerRadius="2"
+                                                    Opacity="0.35">
+                                                    <TextBox
+                                                        x:Name="BotTokenTextBox"
+                                                        HorizontalContentAlignment="Center"
+                                                        VerticalContentAlignment="Center"
+                                                        Background="Transparent"
+                                                        BorderThickness="0"
+                                                        Foreground="White"
+                                                        TextChanged="BotTokenTextBox_TextChanged" />
+                                                </Border>
+                                            </DockPanel>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                </Grid.ColumnDefinitions>
+                                                <!--  Name  -->
+                                                <DockPanel Grid.Column="0" Margin="0,5">
+                                                    <Label
+                                                        Margin="0,0,10,0"
+                                                        VerticalAlignment="Center"
+                                                        Content="Name"
+                                                        FontSize="15"
+                                                        Foreground="White" />
+                                                    <Border
+                                                        Height="25"
+                                                        Background="Black"
+                                                        BorderBrush="White"
+                                                        BorderThickness="1"
+                                                        CornerRadius="2"
+                                                        Opacity="0.35">
+                                                        <TextBox
+                                                            x:Name="BotNameTextBox"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Background="Transparent"
+                                                            BorderThickness="0"
+                                                            Foreground="White"
+                                                            MaxLength="20" />
+                                                    </Border>
+                                                </DockPanel>
+                                                <!--  Prefix  -->
+                                                <DockPanel Grid.Column="2" Margin="0,5">
+                                                    <Label
+                                                        Margin="5,0,5,0"
+                                                        VerticalAlignment="Center"
+                                                        Content="Prefix*"
+                                                        FontSize="15"
+                                                        Foreground="White" />
+                                                    <Border
+                                                        Width="30"
+                                                        Height="25"
+                                                        HorizontalAlignment="Left"
+                                                        Background="Black"
+                                                        BorderBrush="White"
+                                                        BorderThickness="1"
+                                                        CornerRadius="2"
+                                                        Opacity="0.35">
+                                                        <TextBox
+                                                            x:Name="BotPrefixTextBox"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Background="Transparent"
+                                                            BorderThickness="0"
+                                                            Foreground="White"
+                                                            MaxLength="2"
+                                                            Text="$" />
+                                                    </Border>
+                                                </DockPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                        <!--  Commands  -->
+                                        <Grid Grid.Row="1">
+                                            <StackPanel>
+                                                <!--  Your User Id  -->
+                                                <DockPanel Grid.Row="0" Margin="0,5">
+                                                    <Label
+                                                        Width="100"
+                                                        Margin="20,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        Content="Your ID"
+                                                        FontSize="15"
+                                                        Foreground="White" />
+                                                    <Border
+                                                        Height="25"
+                                                        Background="Black"
+                                                        BorderBrush="White"
+                                                        BorderThickness="1"
+                                                        CornerRadius="2"
+                                                        Opacity="0.35">
+                                                        <TextBox
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Background="Transparent"
+                                                            BorderThickness="0"
+                                                            Foreground="White" />
+                                                    </Border>
+                                                </DockPanel>
+                                                <!--  App ID  -->
+                                                <DockPanel Grid.Row="1" Margin="0,5">
+                                                    <Label
+                                                        Width="100"
+                                                        Margin="20,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        Content="App ID"
+                                                        FontSize="15"
+                                                        Foreground="White" />
+                                                    <Border
+                                                        Height="25"
+                                                        Background="Black"
+                                                        BorderBrush="White"
+                                                        BorderThickness="1"
+                                                        CornerRadius="2"
+                                                        Opacity="0.35">
+                                                        <TextBox
+                                                            x:Name="BotAppIDTextBox"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Background="Transparent"
+                                                            BorderThickness="0"
+                                                            Foreground="White" />
+                                                    </Border>
+                                                </DockPanel>
+                                                <!--  App Secret  -->
+                                                <DockPanel Grid.Row="2" Margin="0,5">
+                                                    <Label
+                                                        Width="100"
+                                                        Margin="20,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        Content="App Secret"
+                                                        FontSize="15"
+                                                        Foreground="White" />
+                                                    <Border
+                                                        Height="25"
+                                                        Background="Black"
+                                                        BorderBrush="White"
+                                                        BorderThickness="1"
+                                                        CornerRadius="2"
+                                                        Opacity="0.35">
+                                                        <TextBox
+                                                            x:Name="BotAppSecretTextBox"
+                                                            HorizontalContentAlignment="Center"
+                                                            VerticalContentAlignment="Center"
+                                                            Background="Transparent"
+                                                            BorderThickness="0"
+                                                            Foreground="White" />
+                                                    </Border>
+                                                </DockPanel>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Console">
+                    <!--  Console  -->
+                    <Grid Background="#262223">
+                        <DockPanel Margin="10">
+                            <Grid>
+                                <!--  Logs  -->
+                                <Border
+                                    Grid.Row="0"
+                                    Background="Black"
+                                    BorderBrush="White"
+                                    BorderThickness="1"
+                                    CornerRadius="5"
+                                    Opacity="0.35">
+                                    <TextBox
+                                        Name="ConsoleTextBox"
+                                        Padding="5"
+                                        HorizontalContentAlignment="Stretch"
+                                        VerticalContentAlignment="Top"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        FontWeight="Bold"
+                                        Foreground="#F25922"
+                                        IsReadOnly="True"
+                                        TextWrapping="Wrap"
+                                        VerticalScrollBarVisibility="Visible" />
+                                </Border>
+                            </Grid>
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+            </dragablz:TabablzControl>
+        </Grid>
+    </Grid>
+</Window>
