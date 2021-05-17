@@ -2,12 +2,17 @@
 
 ## Overview
 
-###Simple UI
+### Simple UI
+
 ![pic1](docs/adb1.jpg)
-###Easy Config
+
+### Easy Config
+
 ![pic2](docs/adb2.jpg)
 ![pic3](docs/adb3.jpg)
-###Logging
+
+### Logging
+
 ![pic4](docs/adb4.jpg)
 
 ## Discord Portal Configuration
