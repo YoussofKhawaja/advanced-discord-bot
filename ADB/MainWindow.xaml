@@ -206,11 +206,23 @@
                                             <!--  Token  -->
                                             <DockPanel Margin="0,5">
                                                 <Label
-                                                    Margin="0,0,10,0"
                                                     VerticalAlignment="Center"
                                                     Content="Token*"
                                                     FontSize="15"
                                                     Foreground="White" />
+                                                <Label HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                    <Hyperlink
+                                                        NavigateUri="https://discord.com/developers/applications"
+                                                        RequestNavigate="Hyperlink_RequestNavigate"
+                                                        TextDecorations="None">
+                                                        <materialDesign:PackIcon
+                                                            Width="10"
+                                                            Height="10"
+                                                            BorderBrush="Transparent"
+                                                            Foreground="#F25922"
+                                                            Kind="QuestionMarkCircle" />
+                                                    </Hyperlink>
+                                                </Label>
                                                 <Border
                                                     Height="25"
                                                     MinWidth="400"
