@@ -15,6 +15,13 @@
 
 ![pic4](docs/adb4.jpg)
 
+## Base Features (More to be added)
+
+- Fun Commands
+- Basic Moderation
+- Anime
+- Music
+
 ## Discord Portal Configuration
 
 Enable all **Privileged Gateway Intents** in [Discord Portal](https://discord.com/developers/applications/)
