@@ -4,6 +4,7 @@ using ADB.Handlers;
 using ADB.Helpers;
 using ADB.Models;
 using ADB.Services;
+using Notification.Wpf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,10 +23,12 @@ namespace ADB
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        public NotificationManager notificationManager;
         public MainWindow()
         {
             DataContext = this;
             InitializeComponent();
+            notificationManager = new NotificationManager();
 
             LoadData();
         }
@@ -106,6 +109,7 @@ namespace ADB
             if (string.IsNullOrEmpty(BotTokenTextBox.Text) || string.IsNullOrWhiteSpace(BotTokenTextBox.Text))
             {
                 //set default config
+                notificationManager.Show("Notice", "Please configure the bot in the Config tab",  NotificationType.Information, "WindowArea");
             }
             else
             {
@@ -132,10 +136,13 @@ namespace ADB
 
             if (!DiscordService.botRunning)
             {
+                ConfigBot();
+                if (string.IsNullOrEmpty(BotTokenTextBox.Text) || string.IsNullOrWhiteSpace(BotTokenTextBox.Text))
+                    return;
+
                 btn.Background = Brushes.Gray;
                 PlayIcon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Play;
 
-                ConfigBot();
                 SetupBot.InitBot();
 
                 while (!DiscordService.botRunning)

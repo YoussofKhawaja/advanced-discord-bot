@@ -6,6 +6,7 @@
     xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:notifications="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
     Title="Advanced Discord Bot"
     Width="600"
     Height="300"
@@ -35,6 +36,13 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
+        <notifications:NotificationArea
+            x:Name="WindowArea"
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Panel.ZIndex="999"
+            MaxItems="3"
+            Position="TopLeft" />
         <Grid
             Grid.Row="0"
             Background="#F25922"
