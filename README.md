@@ -6,16 +6,16 @@ This project is meant is a base to build on top of it by adding your custom comm
 
 ### Simple Modern UI
 
-![pic1](docs/adb1.jpg)
-![pic2](docs/adb2.jpg)
+![pic1](docs/adb1.png)
+![pic2](docs/adb2.png)
 
 ### Easy Config
 
-![pic3](docs/adb3.jpg)
+![pic3](docs/adb3.png)
 
 ### Logging
 
-![pic4](docs/adb4.jpg)
+![pic4](docs/adb4.png)
 
 ### Base Features
 
