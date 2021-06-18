@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Discord.Addons.Interactive" Version="2.0.0" />
+    <PackageReference Include="Discord.Net" Version="2.3.1" />
+    <PackageReference Include="Discord.Net.Analyzers" Version="2.3.1" />
+    <PackageReference Include="Discord.Net.Core" Version="2.3.1" />
+    <PackageReference Include="Discord.Net.Rest" Version="2.3.1" />
+    <PackageReference Include="Discord.Net.Webhook" Version="2.3.1" />
+    <PackageReference Include="Discord.Net.WebSocket" Version="2.3.1" />
+    <PackageReference Include="JikanDotNet" Version="1.5.5" />
+    <PackageReference Include="Victoria" Version="5.1.11" />
+  </ItemGroup>
+
+</Project>

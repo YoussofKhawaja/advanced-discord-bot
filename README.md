@@ -1,25 +1,25 @@
-# ADB
+# ADB v2.0
 
 ## Overview
 
-### Simple UI
+This project is meant is a base to build on top of it by adding your custom commands.
+
+### Simple Modern UI
 
 ![pic1](docs/adb1.jpg)
+![pic2](docs/adb2.jpg)
 
 ### Easy Config
 
-![pic2](docs/adb2.jpg)
 ![pic3](docs/adb3.jpg)
 
 ### Logging
 
 ![pic4](docs/adb4.jpg)
 
-## Base Features (More to be added)
+### Base Features
 
-- Fun Commands
-- Basic Moderation
-- Anime
+- Help
 - Music
 
 ## Discord Portal Configuration
@@ -35,6 +35,14 @@ Enable all **Privileged Gateway Intents** in [Discord Portal](https://discord.co
    1. Install [JRE8](https://www.oracle.com/java/technologies/javase-jre8-downloads.html) (Recommended)
 3. Set [Java System Environment Variables](https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 4. Move Files in Lavallink folder to your debug folder where the application launch
+
+If everything was setup correctly this terminal command should return this
+java -version
+```
+java version "15.0.1" 2020-10-20
+Java(TM) SE Runtime Environment (build 15.0.1+9-18)
+Java HotSpot(TM) 64-Bit Server VM (build 15.0.1+9-18, mixed mode, sharing)
+```
 
 ### Linux(ubuntu)
 
@@ -72,3 +80,7 @@ _You are done for now_
 **To download .netcore 3.1 on the wine.**
 
 [.netcore 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) (download windows version)
+
+## Credits
+
+UI inspired by [BinaryBunny](https://www.youtube.com/c/BinaryBunny/featured).
