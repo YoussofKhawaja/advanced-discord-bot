@@ -36,8 +36,11 @@ Enable all **Privileged Gateway Intents** in [Discord Portal](https://discord.co
 3. Set [Java System Environment Variables](https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 4. Move Files in Lavallink folder to your debug folder where the application launch
 
-If everything was setup correctly this terminal command should return this
+If everything was setup correctly this terminal command
+```
 java -version
+```
+should return this
 ```
 java version "15.0.1" 2020-10-20
 Java(TM) SE Runtime Environment (build 15.0.1+9-18)
